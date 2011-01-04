@@ -1,0 +1,9 @@
+Texture grass
+{
+	filename="..\sprites\grass.png"
+}
+Sprite grass1 
+{
+	texture=grass
+	rect=0, 0, 256, 256
+}

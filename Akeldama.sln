@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Akeldama", "Akeldama\Akeldama.vcxproj", "{C3B63E38-5262-4FF2-BA56-FD9A3D8B21FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3B63E38-5262-4FF2-BA56-FD9A3D8B21FC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C3B63E38-5262-4FF2-BA56-FD9A3D8B21FC}.Debug|Win32.Build.0 = Debug|Win32
+		{C3B63E38-5262-4FF2-BA56-FD9A3D8B21FC}.Release|Win32.ActiveCfg = Release|Win32
+		{C3B63E38-5262-4FF2-BA56-FD9A3D8B21FC}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

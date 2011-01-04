@@ -1,0 +1,11 @@
+Texture fireball {
+	filename="..\sprites\fireball.png"
+}
+
+Animation fireball1 {
+	texture=fireball
+	rect=0, 0, 45, 48
+	frames=3
+	fps=18
+	mode=FORWARD,LOOP
+}

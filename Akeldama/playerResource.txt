@@ -1,0 +1,25 @@
+Texture sprite {
+	filename="..\sprites\player.png"
+}
+
+Animation faceDown {
+	texture=sprite
+	rect=0, 0, 16, 23
+	frames=3
+	fps=6
+	mode=FORWARD,LOOP
+}
+Animation faceSideways {
+	texture=sprite
+	rect=0, 23, 16, 23
+	frames=3
+	fps=6
+	mode=FORWARD,LOOP
+}
+Animation faceUp {
+	texture=sprite
+	rect=0, 47, 16, 23
+	frames=3
+	fps=6
+	mode=FORWARD,LOOP
+}

@@ -1,0 +1,11 @@
+Texture NPC {
+	filename="..\sprites\NPC.png"
+}
+
+Animation Eric {
+	texture=NPC
+	rect=0, 0, 26, 31
+	frames=2
+	fps=1
+	mode=FORWARD,LOOP
+}
