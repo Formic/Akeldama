@@ -5,11 +5,12 @@ const float Unit::globalCooldown = 0.5;
 Unit::Unit(float speed, Direction direction) : Entity(true) {
 	this->speed = speed;
 	this->direction = direction;
+	life = 100;
 
 	init();
 }
 Unit::~Unit() {
-
+	life = 100;
 }
 void Unit::init() {
 	dx = 0;
@@ -103,4 +104,7 @@ void Unit::Attack(float dt) {
 		Spell *s = new Spell(750.0, x, y, 700, direction);
 		spells.push_back(s);
 	}
+}
+void Unit::TakeDamage(int damage) {
+	life -= damage;
 }

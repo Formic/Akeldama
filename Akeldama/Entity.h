@@ -20,6 +20,7 @@ class Entity {
 		Entity(float xPos, float yPos, bool collideable);
 		~Entity();
 		hgeAnimation *GetAnimation() { return animation; }
+		virtual void TakeDamage(int damage) { }
 		
 		static void DeleteEntity(Entity* entity);
 };

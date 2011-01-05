@@ -12,6 +12,7 @@ class Unit : public Entity {
 		float dy;
 		float speed;
 		float friction;
+		int life;
 		void init();
 		float cooldownDt;
 		Direction direction;
@@ -35,6 +36,7 @@ class Unit : public Entity {
 		void SetPos(float x, float y);
 		void Render(float dt);
 		void Attack(float dt);
+		void TakeDamage(int damage);
 };
 
 #endif

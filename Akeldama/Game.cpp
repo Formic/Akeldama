@@ -28,8 +28,8 @@ bool GameLoop() {
 	else if (hge->Input_GetKeyState(HGEK_DOWN))		player->MoveDown(dt);
 	else											player->MoveStop();
 
-	if (hge->Input_GetKeyState(HGEK_SPACE))
-													player->Attack(dt);
+	if (hge->Input_GetKeyState(HGEK_SPACE))			player->Attack(dt);
+
 	player->UpdatePos();
 	eric->UpdatePos();
 	return false;

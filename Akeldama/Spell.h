@@ -12,7 +12,7 @@ class Spell : public Entity {
 		float speed;
 		float distance;
 		float range;
-		float damageValue;
+		int damageValue;
 		Direction direction;
 		hgeResourceManager *resourceManager;
 

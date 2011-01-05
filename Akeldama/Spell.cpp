@@ -6,6 +6,8 @@ Spell::Spell(float speed, float xPos, float yPos, float range, Direction directi
 	animation->Play();
 	animation->SetHotSpot(0, (48/2) + 0.5);
 
+	damageValue = 5;
+
 	if (direction == UP)
 		yPos -= animation->GetHeight()/2;
 	else if (direction == DOWN)
@@ -52,9 +54,11 @@ void Spell::UpdatePos(float dt) {
 
 	distance += abs(dx) + abs(dy);
 
-	if (this->collides()) {
+	Entity* entity = collides();
+	if (entity) {
 		xPos -=dx;
 		yPos-=dy;
+		Impact(entity);
 	}
 	
 }
@@ -72,4 +76,5 @@ void Spell::Impact(Entity *entity) {
 	/*Unit* unit = static_cast<Unit*> (entity);
 	if (unit != NULL)
 		unit->TakeDamage(damageValue, damageType);*/
+	entity->TakeDamage(damageValue);
 }
