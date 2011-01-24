@@ -1,6 +1,6 @@
 #ifndef ENUMS_H
 #define ENUMS_H
 
-enum Direction {UP, DOWN, LEFT, RIGHT};
+enum Direction {NONE, UP, DOWN, LEFT, RIGHT};
 
 #endif

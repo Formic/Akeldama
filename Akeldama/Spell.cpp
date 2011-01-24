@@ -4,18 +4,17 @@ Spell::Spell(float speed, float xPos, float yPos, float range, Direction directi
 	resourceManager = new hgeResourceManager("..\\Akeldama\\spellResource.txt");
 	animation = resourceManager->GetAnimation("fireball1");
 	animation->Play();
-	animation->SetHotSpot(0, (48/2) + 0.5);
 
 	damageValue = 5;
 
 	if (direction == UP)
-		yPos -= animation->GetHeight()/2;
+		yPos -= animation->GetHeight()/2 + 0.1;
 	else if (direction == DOWN)
-		yPos += animation->GetHeight()/2;
+		yPos += animation->GetHeight()/2 + 0.1;
 	else if (direction == LEFT)
-		xPos -= animation->GetWidth()/2;
+		xPos -= animation->GetWidth()/2 + 0.1;
 	else if (direction == RIGHT)
-		xPos += animation->GetWidth()/2;
+		xPos += animation->GetWidth()/2 + 0.1;
 
 	this->speed = speed;
 	this->xPos = xPos;
@@ -54,10 +53,8 @@ void Spell::UpdatePos(float dt) {
 
 	distance += abs(dx) + abs(dy);
 
-	Entity* entity = collides();
+	Entity* entity = Collides();
 	if (entity) {
-		xPos -=dx;
-		yPos-=dy;
 		Impact(entity);
 	}
 	
@@ -77,4 +74,5 @@ void Spell::Impact(Entity *entity) {
 	if (unit != NULL)
 		unit->TakeDamage(damageValue, damageType);*/
 	entity->TakeDamage(damageValue);
+	distance = range + 1;
 }

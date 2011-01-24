@@ -20,7 +20,7 @@ class Spell : public Entity {
 		void Impact(Entity* entity);
 
 	public:
-		Spell(float speed, float xPos, float yPos, float rane, Direction direction);
+		Spell(float speed, float xPos, float yPos, float range, Direction direction);
 		~Spell();
 		bool Render(float dt);
 		void UpdatePos(float dt);

@@ -8,4 +8,5 @@ Animation fireball1 {
 	frames=3
 	fps=18
 	mode=FORWARD,LOOP
+	hotspot=22.5, 24
 }

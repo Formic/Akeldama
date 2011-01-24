@@ -1,10 +1,12 @@
 #include "Entity.h"
 
-std::vector<Entity*>* Entity::entities = new std::vector<Entity*>();
+vector<Entity*>* Entity::entities = new vector<Entity*>();
+Entity* Entity::player;
 
 Entity::Entity(bool collideable) {
 	this->collideable = collideable;
 
+	friction = 0.98f;
 	entities->push_back(this);
 }
 Entity::Entity(float xPos, float yPos, bool collideable) {
@@ -12,6 +14,7 @@ Entity::Entity(float xPos, float yPos, bool collideable) {
 	this->yPos = yPos;
 	this->collideable = collideable;
 
+	friction = 0.98f;
 	entities->push_back(this);
 }
 Entity::~Entity() {
@@ -19,45 +22,49 @@ Entity::~Entity() {
 }
 
 
-Entity* Entity::collides() {
-	for (std::vector<Entity*>::iterator i = entities->begin(); i != entities->end(); i++) {
+Entity* Entity::Collides() {
+	for (vector<Entity*>::iterator i = entities->begin(); i != entities->end(); i++) {
 		Entity* entity = *i;
 
-		//can't colide with itself
-		if (this == entity)
-			continue;
-
-		if (!entity->collideable)
-			continue;
-
-		float thisHeight = this->animation->GetHeight();
-		float thisWidth = this->animation->GetWidth();
-		float otherHeight = entity->animation->GetHeight();
-		float otherWidth = entity->animation->GetWidth();
-
-		float thisTop = this->yPos + (thisHeight / 2);
-		float thisBottom = this->yPos - (thisHeight / 2);
-		float thisLeft = this->xPos - (thisWidth / 2);
-		float thisRight = this->xPos + (thisWidth / 2);
-
-		float otherTop = entity->yPos + (otherHeight / 2);
-		float otherBottom = entity->yPos - (otherHeight / 2);
-		float otherLeft = entity->xPos - (otherWidth / 2);
-		float otherRight = entity->xPos + (otherWidth / 2);
-
-		if (thisBottom > otherTop) continue;
-		if (thisTop < otherBottom) continue;
-
-		if (thisLeft > otherRight) continue;
-		if (thisRight < otherLeft) continue;
-
-		return entity;
+		if (Collides(this, entity))
+			return entity;
 	}
 	return NULL;
 }
+bool Entity::Collides(Entity* A, Entity* B) {
+	//can't colide with itself
+	if (A == B)
+		return false;
+
+	if (!B->collideable)
+		return false;
+
+	float AHeight = A->GetHeight();
+	float AWidth = A->GetWidth();
+	float BHeight = B->GetHeight();
+	float BWidth = B->GetWidth();
+
+	float ATop = A->yPos + (AHeight / 2);
+	float ABottom = A->yPos - (AHeight / 2);
+	float ALeft = A->xPos - (AWidth / 2);
+	float ARight = A->xPos + (AWidth / 2);
+
+	float BTop = B->yPos + (BHeight / 2);
+	float BBottom = B->yPos - (BHeight / 2);
+	float BLeft = B->xPos - (BWidth / 2);
+	float BRight = B->xPos + (BWidth / 2);
+
+	if (ABottom > BTop) return false;
+	if (ATop < BBottom) return false;
+
+	if (ALeft > BRight) return false;
+	if (ARight < BLeft) return false;
+
+	return true;
+}
 void Entity::DeleteEntity(Entity* entity) {
 	
-	for (std::vector<Entity*>::iterator i = entities->begin(); i != entities->end(); i++) {
+	for (vector<Entity*>::iterator i = entities->begin(); i != entities->end(); i++) {
 		if (*i == entity) {
 			entities->erase(i);
 			break;

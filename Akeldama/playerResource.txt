@@ -8,6 +8,7 @@ Animation faceDown {
 	frames=3
 	fps=6
 	mode=FORWARD,LOOP
+	hotspot=8, 11.5
 }
 Animation faceSideways {
 	texture=sprite
@@ -15,6 +16,7 @@ Animation faceSideways {
 	frames=3
 	fps=6
 	mode=FORWARD,LOOP
+	hotspot=8, 11.5
 }
 Animation faceUp {
 	texture=sprite
@@ -22,4 +24,5 @@ Animation faceUp {
 	frames=3
 	fps=6
 	mode=FORWARD,LOOP
+	hotspot=8, 11.5
 }

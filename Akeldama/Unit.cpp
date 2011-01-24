@@ -15,7 +15,6 @@ Unit::~Unit() {
 void Unit::init() {
 	dx = 0;
 	dy = 0;
-	friction = 0.98f;
 	cooldownDt = globalCooldown;
 }
 void Unit::MoveLeft(float dt) {
@@ -47,7 +46,7 @@ void Unit::MoveDown(float dt) {
 void Unit::MoveStop() {
 	animation->Stop();
 }
-void Unit::UpdatePos() {
+float Unit::UpdatePos(float dt) {
 	float oldXPos = xPos;
 	float oldYPos = yPos;
 
@@ -56,10 +55,12 @@ void Unit::UpdatePos() {
 	xPos+=dx;
 	yPos+=dy;
 	
-	if (this->collides()) {
+	if (this->Collides()) {
 		xPos = oldXPos;
 		yPos = oldYPos;
 	}
+	//returns distance moved
+	return abs(xPos - oldXPos) + abs(yPos - oldYPos);
 }
 void Unit::SetPos(float xPos, float yPos) {
 	this->xPos = xPos;
@@ -72,7 +73,7 @@ void Unit::Render(float dt) {
 	for (int i=0; i < (int)spells.size(); i++) {
 		if (spells[i]->Render(dt)) {
 			Spell* newReference = spells[i];
-			for (std::vector<Spell*>::iterator j = spells.begin(); j != spells.end(); j++) {
+			for (vector<Spell*>::iterator j = spells.begin(); j != spells.end(); j++) {
 				if (*j == spells[i]) {
 					spells.erase(j);
 					break;

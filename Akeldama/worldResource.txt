@@ -1,6 +1,6 @@
 Texture grass
 {
-	filename="..\sprites\grass.png"
+	filename="..\sprites\grass2.png"
 }
 Sprite grass1 
 {

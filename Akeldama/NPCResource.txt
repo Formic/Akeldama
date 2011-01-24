@@ -1,11 +1,28 @@
 Texture NPC {
 	filename="..\sprites\NPC.png"
-}
+
 
 Animation Eric {
 	texture=NPC
 	rect=0, 0, 26, 31
-	frames=2
+	frames=1
 	fps=1
 	mode=FORWARD,LOOP
+	hotspot=13, 15.5
+}
+Animation Vision {
+	texture=NPC
+	rect=0, 0, 26, 31
+	frames=1
+	fps=1
+	mode=FORWARD,LOOP
+	hotspot=13, 15.5
+}
+Animation Vision1 {
+	texture=NPC
+	rect=0, 0, 26, 31
+	frames=1
+	fps=1
+	mode=FORWARD,LOOP
+	hotspot=13, 15.5
 }

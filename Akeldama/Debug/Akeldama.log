@@ -1,19 +1,14 @@
-﻿Build started 1/4/2011 6:12:33 PM.
+﻿Build started 1/23/2011 11:16:07 PM.
      1>Project "C:\dev\Blackout\Akeldama\Akeldama\Akeldama.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Creating "Debug\Akeldama.unsuccessfulbuild" because "AlwaysCreate" was specified.
+         Touching "Debug\Akeldama.unsuccessfulbuild".
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IC:\dev\Blackout\Akeldama\hge\include /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Entity.cpp Game.cpp NPC.cpp Player.cpp Spell.cpp Unit.cpp
-         Unit.cpp
-         Generating Code...
-         Compiling...
-         Spell.cpp
-         Player.cpp
-         NPC.cpp
-         Entity.cpp
-         Generating Code...
-         Skipping... (no relevant changes detected)
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IC:\dev\Blackout\Akeldama\hge\include /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Game.cpp
          Game.cpp
+     1>c:\dev\blackout\akeldama\akeldama\game.cpp(63): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\dev\blackout\akeldama\akeldama\game.cpp(123): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\dev\blackout\akeldama\akeldama\game.cpp(123): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\dev\blackout\akeldama\akeldama\game.cpp(148): warning C4305: 'argument' : truncation from 'double' to 'float'
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\dev\Blackout\Akeldama\Debug\Akeldama.exe" /NOLOGO ..\hge\hge.lib ..\hge\hgehelp.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:LIBC.lib /MANIFEST /ManifestFile:"Debug\Akeldama.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\dev\Blackout\Akeldama\Debug\Akeldama.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\dev\Blackout\Akeldama\Debug\Akeldama.lib" /MACHINE:X86 Debug\Entity.obj
          Debug\Game.obj
@@ -32,4 +27,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:04.91
+Time Elapsed 00:00:01.67
