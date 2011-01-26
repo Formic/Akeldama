@@ -1,9 +1,13 @@
+/**
+ * NPC class - isA Unit
+ *
+ *
+ */
 #ifndef NPC_H
 #define NPC_H
 
 #include "Unit.h"
 #include "Vision.h"
-
 
 class NPC : public Unit {
 	private:

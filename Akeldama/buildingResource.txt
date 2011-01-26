@@ -1,0 +1,12 @@
+Texture buildings
+{
+	filename="..\sprites\buildings.png"
+}
+Animation house
+{
+	texture=buildings
+	rect=0, 0, 80, 56
+	frames=1
+	fps=1
+	hotspot=40, 28
+}

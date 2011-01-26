@@ -1,3 +1,7 @@
+/**
+ * Holder for enums used in the game
+ *
+ */
 #ifndef ENUMS_H
 #define ENUMS_H
 

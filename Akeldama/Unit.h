@@ -1,7 +1,6 @@
 #ifndef UNIT_H
 #define UNIT_H
 
-#include "hgeresource.h"
 #include "Entity.h"
 #include "Spell.h"
 
@@ -19,7 +18,6 @@ class Unit : public Entity {
 		int life;
 		float speed;
 		Direction direction;
-		hgeResourceManager *resourceManager;
 
 	public:
 		Unit(float speed, Direction direction);

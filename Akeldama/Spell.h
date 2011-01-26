@@ -1,7 +1,6 @@
 #ifndef SPELL_H
 #define SPELL_H
 
-#include "hgeresource.h"
 #include "Entity.h"
 #include <math.h>
 
@@ -14,7 +13,6 @@ class Spell : public Entity {
 		float range;
 		int damageValue;
 		Direction direction;
-		hgeResourceManager *resourceManager;
 
 		float GetRotation();
 		void Impact(Entity* entity);
