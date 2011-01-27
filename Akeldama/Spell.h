@@ -1,3 +1,9 @@
+/**
+ * Spell class - isA Entity
+ *
+ * Spells are non-collideable entities. The have a maximum range and a speed. On impact the spell invokes
+ * the takeDamage method on the entity it collides with.
+ */
 #ifndef SPELL_H
 #define SPELL_H
 

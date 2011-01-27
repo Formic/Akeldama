@@ -70,9 +70,7 @@ float Spell::GetRotation() {
 	return (270*M_PI)/180;
 }
 void Spell::Impact(Entity *entity) {
-	/*Unit* unit = static_cast<Unit*> (entity);
-	if (unit != NULL)
-		unit->TakeDamage(damageValue, damageType);*/
+	//TODO: Animate spell impact, play sound, etc
 	entity->TakeDamage(damageValue);
-	distance = range + 1;
+	distance = range + 1; //sets spell up for destroy
 }

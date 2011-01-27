@@ -19,16 +19,16 @@ using namespace std;
 
 class Entity {	
 	private:
-		static Entity* player; //track the player entity, used for NPC AI purposes
+		static Entity* player;	 //track the player entity, used for NPC AI purposes
 	protected:
 		//-= Member variables =-
-		float friction; //used in calculating movement
+		float friction;			 //used in calculating movement
 		float xPos;
 		float yPos;
 		hgeAnimation* animation; //animation (sprites) of entity
-		bool collideable; //can this entity be collided into
-		bool canSeeThrough; //NPC players can see through this entity
-		bool canShootThrough; //Spells/Bullets can pass through (over) this object)
+		bool collideable;		 //can this entity be collided into
+		bool canSeeThrough;		 //NPC players can see through this entity
+		bool canShootThrough;	 //Spells/Bullets can pass through (over) this object)
 		hgeResourceManager *resourceManager;
 		
 		//-= Static member variables =-

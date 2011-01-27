@@ -1,52 +1,52 @@
-#include "Unit.h"
+#include "Character.h"
 
-const float Unit::globalCooldown = 0.5;
+const float Character::globalCooldown = 0.5;
 
-Unit::Unit(float speed, Direction direction) : Entity(true) {
+Character::Character(float speed, Direction direction) : Entity(true) {
 	this->speed = speed;
 	this->direction = direction;
 	life = 100;
 
 	init();
 }
-Unit::~Unit() {
+Character::~Character() {
 	life = 100;
 }
-void Unit::init() {
+void Character::init() {
 	dx = 0;
 	dy = 0;
 	cooldownDt = globalCooldown;
 }
-void Unit::MoveLeft(float dt) {
+void Character::MoveLeft(float dt) {
 	animation = resourceManager->GetAnimation("faceSideways");
 	animation->SetFlip(true, false);
 	direction = LEFT;
 	dx-=speed*dt;
 	animation->Resume();
 }
-void Unit::MoveRight(float dt) {
+void Character::MoveRight(float dt) {
 	animation = resourceManager->GetAnimation("faceSideways");
 	animation->SetFlip(false, false);
 	direction = RIGHT;
 	dx+=speed*dt;
 	animation->Resume();
 }
-void Unit::MoveUp(float dt) {
+void Character::MoveUp(float dt) {
 	animation = resourceManager->GetAnimation("faceUp");
 	direction = UP;
 	dy-=speed*dt;
 	animation->Resume();
 }
-void Unit::MoveDown(float dt) {
+void Character::MoveDown(float dt) {
 	animation = resourceManager->GetAnimation("faceDown");
 	direction = DOWN;
 	dy+=speed*dt;
 	animation->Resume();
 }
-void Unit::MoveStop() {
+void Character::MoveStop() {
 	animation->Stop();
 }
-float Unit::UpdatePos(float dt) {
+float Character::UpdatePos(float dt) {
 	float oldXPos = xPos;
 	float oldYPos = yPos;
 
@@ -62,11 +62,11 @@ float Unit::UpdatePos(float dt) {
 	//returns distance moved
 	return abs(xPos - oldXPos) + abs(yPos - oldYPos);
 }
-void Unit::SetPos(float xPos, float yPos) {
+void Character::SetPos(float xPos, float yPos) {
 	this->xPos = xPos;
 	this->yPos = yPos;
 }
-void Unit::Render(float dt) {
+void Character::Render(float dt) {
 	animation->Render(xPos, yPos);
 	animation->Update(dt);
 
@@ -87,7 +87,7 @@ void Unit::Render(float dt) {
 		cooldownDt += dt;
 
 }
-void Unit::Attack(float dt) {
+void Character::Attack(float dt) {
 	if (cooldownDt >= globalCooldown) {
 		cooldownDt = 0;
 		float x = xPos;
@@ -106,6 +106,6 @@ void Unit::Attack(float dt) {
 		spells.push_back(s);
 	}
 }
-void Unit::TakeDamage(int damage) {
+void Character::TakeDamage(int damage) {
 	life -= damage;
 }

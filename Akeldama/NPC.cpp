@@ -4,7 +4,7 @@
 const float NPC::maxAllottedDistanceFromPath = 30;
 const float NPC::visionAngle = 25;
 
-NPC::NPC() : Unit(2, DOWN) {
+NPC::NPC() : Character(2, DOWN) {
 	resourceManager = new hgeResourceManager("..\\Akeldama\\playerResource.txt");
 	animation = resourceManager->GetAnimation("faceDown");
 	//animation->Play();
@@ -118,7 +118,7 @@ void NPC::Patrol(float dt) {
 	if ((*currentPathVector)->second == NONE)
 		distanceOnCurrentPathVector += dt;
 	else
-		distanceOnCurrentPathVector += Unit::UpdatePos(dt);
+		distanceOnCurrentPathVector += Character::UpdatePos(dt);
 }
 void NPC::InvertPath() {
   vector<pair<float, Direction>*>::iterator i;

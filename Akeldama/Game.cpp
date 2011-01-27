@@ -12,7 +12,9 @@
  * Summary: 2D RPG that will have a zelda-esk look and feel with a Diablo-esk style of gameplay.
  *
  * Currently working on: AI is incomplete. Currently has vision detection and a patrol system in place. Adding
- *						 ability to move to position to attack player. 
+ *						 ability to move to position to attack player as well as not being able to see through
+ *                       objects that are solid, and see over (or through) objects that are set to such. 
+ *						 Rendering is not currently handled by the entity class, but will be.
  */
 
 /**
@@ -23,7 +25,7 @@
  */
 #include "hge.h"
 #include "Entity.h"
-#include "Unit.h"
+#include "Character.h"
 #include "Player.h"
 #include "NPC.h"
 #include "Building.h"
@@ -215,7 +217,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		backgroundSprite = hgeResource->GetSprite("grass1");
 		player = new Player();
 		eric = new NPC();
-		building = new Building(-300, -300);
+		building = new Building(350, 150);
 
 		font = new hgeFont("font1.fnt");
 		font->SetScale(0.7);
